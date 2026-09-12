@@ -36,6 +36,14 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const prettyIngredient = (key: string) => {
+  const pantryItem = Object.values(PANTRY_BY_CATEGORY)
+    .flat()
+    .find((item) => item.name.toLowerCase() === key.toLowerCase());
+  if (pantryItem) return pantryItem.name;
+  return key.charAt(0).toUpperCase() + key.slice(1);
+};
+
 const CATEGORIES: { id: MealCategory; label: string; icon: string }[] = [
   { id: "Breakfast", label: "Breakfast", icon: "🍳" },
   { id: "Lunch", label: "Lunch", icon: "☀️" },
@@ -136,14 +144,6 @@ function Index() {
   const recipeMatches = (recipe: ChefSteelRecipe, item: string) => {
     const ingredient = item.trim().toLowerCase();
     return recipe.keys.some((key) => key === ingredient || ingredient.includes(key) || key.includes(ingredient));
-  };
-
-  const prettyIngredient = (key: string) => {
-    const pantryItem = Object.values(PANTRY_BY_CATEGORY)
-      .flat()
-      .find((item) => item.name.toLowerCase() === key.toLowerCase());
-    if (pantryItem) return pantryItem.name;
-    return key.charAt(0).toUpperCase() + key.slice(1);
   };
 
   const recipeGroups = useMemo(() => {
