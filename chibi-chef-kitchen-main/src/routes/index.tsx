@@ -71,10 +71,12 @@ function RecipeGroup({
 }) {
   return (
     <div>
-      <div className="mb-3">
-        <h4 className="font-fredoka text-lg font-extrabold">{title}</h4>
-        <p className="mt-0.5 text-xs text-muted-foreground">{subtitle}</p>
-      </div>
+      {(title || subtitle) && (
+        <div className="mb-3">
+          {title && <h4 className="font-fredoka text-lg font-extrabold">{title}</h4>}
+          {subtitle && <p className="mt-0.5 text-xs text-muted-foreground">{subtitle}</p>}
+        </div>
+      )}
       <div className="grid gap-3 sm:grid-cols-2">
         {recipes.map((recipe) => {
           const matched = selected
@@ -411,8 +413,8 @@ function Index() {
                 <div className="mt-5 space-y-6">
                   {recipeGroups.ready.length > 0 && (
                     <RecipeGroup
-                      title="Ready to cook"
-                      subtitle="A few cozy ideas for you"
+                      title=""
+                      subtitle=""
                       recipes={recipeGroups.ready}
                       selected={selected}
                       recipeMatches={recipeMatches}
