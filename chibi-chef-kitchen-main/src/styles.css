@@ -183,7 +183,8 @@
   }
 
   body {
-    background-color: var(--color-background);
+   background-color: oklch(0.985 0.008 95);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%2328231e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='.07'%3E%3Cpath d='M35 28c-8 0-14 6-14 14s6 14 14 14h18c8 0 14-6 14-14s-6-14-14-14c-2-7-8-11-18-6z'/%3E%3Cpath d='M122 24v38m-10-26h20m-20 0-8-8m28 8 8-8M122 62l-6 12h12z'/%3E%3Cpath d='M28 112l42-42m-35 8 35-35m-23 58 35-35'/%3E%3Cpath d='M115 103c-13 0-23 10-23 23h46c0-13-10-23-23-23zm-17 23v10h34v-10m-17-23V91'/%3E%3Cpath d='M27 157c12-8 25-8 37 0m-18-5v-19m-8 8 8 8 8-8'/%3E%3Cpath d='M139 154c0-12-9-21-20-21s-20 9-20 21h40zm-32-7h24m-19-7 14 14'/%3E%3C/g%3E%3C/svg%3E");
     color: var(--color-foreground);
   }
 }
