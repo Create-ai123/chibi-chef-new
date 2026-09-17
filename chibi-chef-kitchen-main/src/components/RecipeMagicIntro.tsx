@@ -22,17 +22,36 @@ export function RecipeMagicIntro({ recipe, onDone }: Props) {
             <div className="absolute -top-5 left-1/2 h-7 w-24 -translate-x-1/2 rounded-full border-4 border-border bg-card" />
             <div className="absolute left-1/2 top-7 -translate-x-1/2 text-5xl">🍲</div>
           </div>
-          <img src={chefMascot} alt="Cute chef stirring a pot" width={768} height={768} className="relative z-10 h-56 w-56 object-contain sm:h-64 sm:w-64" />
+
+          <img
+            src={chefMascot}
+            alt="Cute chef stirring a pot"
+            width={768}
+            height={768}
+            className="relative z-10 h-56 w-56 animate-chef-bounce object-contain sm:h-64 sm:w-64"
+          />
+
           <span className="absolute right-10 top-12 animate-bounce text-3xl sm:right-20">✨</span>
           <span className="absolute left-10 top-20 animate-pulse text-2xl sm:left-20">💨</span>
         </div>
-        <p className="mt-3 text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">Chef&apos;s kitchen</p>
-        <h1 className="mt-2 font-fredoka text-3xl font-extrabold sm:text-4xl">{recipe.title}</h1>
+
+        <p className="mt-3 text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">
+          Chef&apos;s kitchen
+        </p>
+
+        <h1 className="mt-2 font-fredoka text-3xl font-extrabold sm:text-4xl">
+          {recipe.title}
+        </h1>
+
         <div className="relative mx-auto mt-5 max-w-lg rounded-3xl bg-secondary px-6 py-4 text-sm font-semibold text-secondary-foreground shadow-[var(--shadow-soft)]">
-          <span className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 bg-secondary" aria-hidden />
+          <span
+            className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 bg-secondary"
+            aria-hidden
+          />
           <p>Chef is stirring the pot...</p>
           <p className="mt-1">Tasting, seasoning, sprinkling love 💛</p>
         </div>
+
         <div className="mt-5 flex items-center justify-center gap-2 text-sm font-bold text-primary">
           <span className="h-2 w-2 animate-pulse rounded-full bg-current" />
           <span className="h-2 w-2 animate-pulse rounded-full bg-current [animation-delay:150ms]" />
